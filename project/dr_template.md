@@ -15,7 +15,7 @@ Identify your zones here
 | Asset name | Brief description | AWS size eg. t3.micro (if applicable, not all assets will have a size) | Number of nodes/replicas or just how many of a particular asset | Identify if this asset is deployed to DR, replicated, created in multiple locations or just stored elsewhere |
 | EC2 instances |  App Servers  |     t3.micro                       |     6                               |    2 zones, 3 instances each zone for DR purpose                |
 |Key Pair | SSH key for accessing EC2 instances |  | 2  | Deployed 1 at each regions |
-|S3 Bucket|  For Terraform |   |  2 |      1 in Each region  |
+|S3 Bucket|  To save Terraform state |   |  2 |      1 in Each region  |
 | EKS Cluster |  Kubernetes cluster |  | 2 | 1 EKS cluster in each region | 
 | RDS Cluster | Database |  | 2 | Replicated from Primary zone to Secondary Zone    |
 | Application Load Balancer | For Traffic distribution |   | 2  | One in each region |
