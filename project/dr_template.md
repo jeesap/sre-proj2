@@ -24,6 +24,11 @@ Identify your zones here
 ### Descriptions
 More detailed descriptions of each asset identified above.
 
+
+**EC2 instances :**
+
+EC2 instances to  be created in every availability zone in the region
+
 **3 Bucket :**
 
 we have created 2 s3 buckets at 2 regions, to save terraform state.
@@ -37,9 +42,6 @@ we have created 2 s3 buckets at 2 regions, to save terraform state.
 we have created Virtual Private Cloud (Amazon VPC) to launch AWS resources into it, we created subnets public and private in each availability zone of each region.
 
 
-**EC2 instances for web server:**
-
-we need to create EC2 in every availability zone in the region
 AMI images are using to hold the application executable. You have to create and store these AMI images in both regions. Also, these AMI images are copied from us-east-1 region.
 
 **RDS cluster:**
