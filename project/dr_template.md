@@ -1,7 +1,7 @@
 # Infrastructure
 
 ## AWS Zones
-Identify your zones here
+_Identify your zones here_
 
 **Primary Zone ( Zone 1 ) :** us-east-2a , us-east-2b
 
@@ -22,7 +22,7 @@ Identify your zones here
 | VPC |  Virtual Network |   | 2  | One in Primary Zone and ther one in DR Zone|
 
 ### Descriptions
-More detailed descriptions of each asset identified above.
+_More detailed descriptions of each asset identified above._
 
 
 **EC2 instances :**
@@ -52,7 +52,7 @@ Elastic Load Balancing automatically distributes incoming traffic across multipl
 
 ## DR Plan
 ### Pre-Steps:
-List steps you would perform to setup the infrastructure in the other region. It doesn't have to be super detailed, but high-level should suffice.
+_List steps you would perform to setup the infrastructure in the other region. It doesn't have to be super detailed, but high-level should suffice._
 
 Restore & Create AMI images at 2 regions.
 
@@ -70,6 +70,6 @@ Provision monitoring stack: prometheus configuration, Grafana dashboard
 
 
 ## Steps:
-You won't actually perform these steps, but write out what you would do to "fail-over" your application and database cluster to the other region. Think about all the pieces that were setup and how you would use those in the other region
+_You won't actually perform these steps, but write out what you would do to "fail-over" your application and database cluster to the other region. Think about all the pieces that were setup and how you would use those in the other region_
 
 Create a cloud load balancer and point DNS to the load balancer. This way you can have multiple instances behind 1 IP in a region. During a failover scenario, you would fail over the single DNS entry at your DNS provider to point to the DR site. This is much more intelligent than pointing to a single instance of a web server. Have a replicated database and perform a failover on the database. While a backup is good and necessary, it is time-consuming to restore from backup. In this DR step, you would have already configured replication and would perform the database failover. Ideally, your application would be using a generic CNAME DNS record and would just connect to the DR instance of the database.
