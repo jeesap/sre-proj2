@@ -16,7 +16,7 @@ Identify your zones here
 | EC2 instances |  App Servers  |     t3.micro                       |     6                               |    2 zones, 3 instances each zone for DR purpose                |
 |S3 Bucket|  For Terraform |   |  2 |      1 in Each region  |
 | EKS Cluster |  Kubernetes cluster |  | 2 | 1 EKS cluster in each region | 
-
+| RDS Cluster | Databse |  | 2 | Replicated from Primary zone to Secondary Zone    |
 ### Descriptions
 More detailed descriptions of each asset identified above.
 
