@@ -14,7 +14,7 @@ Identify your zones here
 |------------|-------------------|------------------------------------------------------------------------|-----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
 | Asset name | Brief description | AWS size eg. t3.micro (if applicable, not all assets will have a size) | Number of nodes/replicas or just how many of a particular asset | Identify if this asset is deployed to DR, replicated, created in multiple locations or just stored elsewhere |
 | EC2 instances |  App Servers  |     t3.micro                       |     6                               |    2 zones, 3 instances each zone for DR purpose                |
-|S3 Bucket|  For Terraform  |  2 |      1 in Each region  |
+|S3 Bucket|  For Terraform |   |  2 |      1 in Each region  |
 
 
 ### Descriptions
