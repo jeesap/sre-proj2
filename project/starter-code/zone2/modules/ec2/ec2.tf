@@ -11,7 +11,7 @@ resource "aws_instance" "ubuntu" {
   ami           = var.aws_ami
   count = var.instance_count
   instance_type = "t3.micro"
-  key_name = "udacity"
+  key_name = "udacity_west"
   subnet_id = var.public_subnet_ids[0]
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
 
