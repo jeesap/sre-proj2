@@ -3,9 +3,9 @@
 ## AWS Zones
 Identify your zones here
 
-**Primary:** us-east-2a , us-east-2b
+**Primary Zone ( Zone 1 ) :** us-east-2a , us-east-2b
 
-**Secondary :** us-west-1b , us-west-1c
+**DR Zone ( Zone 2)  :** us-west-1b , us-west-1c
 
 ## Servers and Clusters
 
@@ -13,13 +13,13 @@ Identify your zones here
 | Asset      | Purpose           | Size                                                                   | Qty                                                             | DR                                                                                                           |
 |------------|-------------------|------------------------------------------------------------------------|-----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
 | Asset name | Brief description | AWS size eg. t3.micro (if applicable, not all assets will have a size) | Number of nodes/replicas or just how many of a particular asset | Identify if this asset is deployed to DR, replicated, created in multiple locations or just stored elsewhere |
-| EC2 instances |  App Servers  |     t3.micro                       |     6                               |    2 zones, 3 instances each zone for DR purpose                |
-|Key Pair | SSH key for accessing EC2 instances |  | 2  | Deployed 1 at each regions |
-|S3 Bucket|  To save Terraform state |   |  2 |      1 in Each region  |
-| EKS Cluster |  Kubernetes cluster |  | 2 | 1 EKS cluster in each region | 
-| RDS Cluster | Database |  | 2 | Replicated from Primary zone to Secondary Zone    |
-| Application Load Balancer | For Traffic distribution |   | 2  | One in each region |
-| VPC |  Virtual Network |   | 2  | One in us-east-1 and the other one in us-west-1 |
+| EC2 instances |  App Servers  |     t3.micro                       |     6                               |    3 instances deployed to DR zone exactly like Primary zone       |
+|Key Pair | SSH key for accessing EC2 instances |  | 2  | 1 each for Primary and DR Zone |
+|S3 Bucket|  To save Terraform state |   |  2 |      1 each in Primary and DR Zone |
+| EKS Cluster |  Kubernetes cluster |  | 2 | 1 EKS cluster each in Primary and DR Zone | 
+| RDS Cluster | Database |  | 2 | Replicated from Primary zone to DR Zone    |
+| Application Load Balancer | For Traffic distribution |   | 2  | One in Primary and other in DR Zone |
+| VPC |  Virtual Network |   | 2  | One in Primary Zone and ther one in DR Zone|
 
 ### Descriptions
 More detailed descriptions of each asset identified above.
