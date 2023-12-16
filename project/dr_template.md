@@ -27,22 +27,19 @@ More detailed descriptions of each asset identified above.
 
 **EC2 instances :**
 
-EC2 instances to  be created in every availability zone in the region
+EC2 instances are created in every availability zone in the region
 
 **3 Bucket :**
 
-we have created 2 s3 buckets at 2 regions, to save terraform state.
+2 s3 buckets are created at 2 regions, to save terraform state.
 
 **Key pairs:**
 
-2 key pairs with same name "udacity" creted at 2 regions, it's ssh key-pairs used to connect to ec2 instances of web servers.
+2 key pairs with name "udacity" and "udacity_west" are created at 2 regions, it's ssh key-pairs for connecting to ec2 instances of web servers.
 
 **VPC:**
 
-we have created Virtual Private Cloud (Amazon VPC) to launch AWS resources into it, we created subnets public and private in each availability zone of each region.
-
-
-AMI images are using to hold the application executable. You have to create and store these AMI images in both regions. Also, these AMI images are copied from us-east-1 region.
+Virtual Private Cloud (Amazon VPC) is created to launch AWS resources into it, subnets public and private created in each availability zone of each region.
 
 **RDS cluster:**
 
