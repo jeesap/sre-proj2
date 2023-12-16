@@ -17,6 +17,9 @@ Identify your zones here
 |S3 Bucket|  For Terraform |   |  2 |      1 in Each region  |
 | EKS Cluster |  Kubernetes cluster |  | 2 | 1 EKS cluster in each region | 
 | RDS Cluster | Databse |  | 2 | Replicated from Primary zone to Secondary Zone    |
+| Application Load Balancer | For Traffic distribution |   | 2  | One in each region |
+
+
 ### Descriptions
 More detailed descriptions of each asset identified above.
 
