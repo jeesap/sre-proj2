@@ -3,8 +3,10 @@
 ## AWS Zones
 Identify your zones here
 
-Primary: us-east-2a , us-east-2b
-Secondary : us-west-1b , us-west-1c
+**Primary:** us-east-2a , us-east-2b
+
+**Secondary :** us-west-1b , us-west-1c
+
 ## Servers and Clusters
 
 ### Table 1.1 Summary
