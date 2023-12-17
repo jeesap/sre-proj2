@@ -58,13 +58,13 @@ Restore & Create AMI images at 2 regions.
 
 Create S3 buckets for terraform state.
 
-Create private Keypairs with name "udacity" at 2 regions.
+Create private Keypairs with name "udacity" (us-east-2) and "udacity_west" ( us-west-1) at 2 regions.
 
-Provision: VPC, Application Load Balancer (ALB), Security groups, EC2 instances web - servers and EKS cluster in another region.
+Provision VPC, Application Load Balancer (ALB), Security groups, EC2 instances web - servers and EKS cluster in another region.
 
 Provision primary RDS cluster in us-east-2 region replicated to a secondary RDS cluster in us-west-1 region.
 
-Using Postman collections to initiate the flask app, make traffic.
+Using Postman collections to initiate the flask app, create traffic.
 
 Provision monitoring stack: prometheus configuration, Grafana dashboard
 
@@ -72,4 +72,8 @@ Provision monitoring stack: prometheus configuration, Grafana dashboard
 ## Steps:
 _You won't actually perform these steps, but write out what you would do to "fail-over" your application and database cluster to the other region. Think about all the pieces that were setup and how you would use those in the other region_
 
-Create a cloud load balancer and point DNS to the load balancer. This way you can have multiple instances behind 1 IP in a region. During a failover scenario, you would fail over the single DNS entry at your DNS provider to point to the DR site. This is much more intelligent than pointing to a single instance of a web server. Have a replicated database and perform a failover on the database. While a backup is good and necessary, it is time-consuming to restore from backup. In this DR step, you would have already configured replication and would perform the database failover. Ideally, your application would be using a generic CNAME DNS record and would just connect to the DR instance of the database.
+Create a cloud load balancer and point DNS to the load balancer. This way you can have multiple instances behind 1 IP in a region. 
+During a failover scenario, you would fail over the single DNS entry at your DNS provider to point to the DR site. This is much more intelligent than pointing to a single instance of a web server. 
+Have a replicated database and perform a failover on the database. 
+While a backup is good and necessary, it is time-consuming to restore from backup. 
+In this DR step, you would have already configured replication and would perform the database failover. Ideally, your application would be using a generic CNAME DNS record and would just connect to the DR instance of the database.
