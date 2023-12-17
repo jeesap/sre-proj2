@@ -54,20 +54,13 @@ Elastic Load Balancing automatically distributes incoming traffic across multipl
 ### Pre-Steps:
 _List steps you would perform to setup the infrastructure in the other region. It doesn't have to be super detailed, but high-level should suffice._
 
-Restore & Create AMI images at 2 regions.
+Restore & Create AMI image at DR Zone.
 
-Create S3 buckets for terraform state.
+Create an S3 bucket for terraform state in DR Zone
 
-Create private Keypairs with name "udacity" (us-east-2) and "udacity_west" ( us-west-1) at 2 regions.
+Provision VPC, Application Load Balancer (ALB), Security groups, EC2 instances web - servers and EKS cluster in DR Zone.
 
-Provision VPC, Application Load Balancer (ALB), Security groups, EC2 instances web - servers and EKS cluster in another region.
-
-Provision primary RDS cluster in us-east-2 region replicated to a secondary RDS cluster in us-west-1 region.
-
-Using Postman collections to initiate the flask app, create traffic.
-
-Provision monitoring stack: prometheus configuration, Grafana dashboard
-
+Provision secondary RDS cluster in us-west-1 region ( DR Zone ) which is replicated from primary RDS cluster in us-east-2 region.
 
 ## Steps:
 _You won't actually perform these steps, but write out what you would do to "fail-over" your application and database cluster to the other region. Think about all the pieces that were setup and how you would use those in the other region_
