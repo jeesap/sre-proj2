@@ -1,19 +1,19 @@
-resource "aws_lb_target_group" "udacity" {
-  name     = "udacity-lb-tg"
+resource "aws_lb_target_group" "udacityTGeast" {
+  name     = "udacity-lb-east2"
   port     = 80
   protocol = "HTTP"
   vpc_id   = var.vpc_id
 }
 
 resource "aws_lb_target_group_attachment" "udacity" {
-  count            = 3
-  target_group_arn = aws_lb_target_group.udacity.arn
+  count            = 3     
+  target_group_arn = aws_lb_target_group.udacityTGeast.arn
   target_id        = var.ec2.*.id[count.index]
   port             = 80
 }
 
 resource "aws_lb" "udacity" {
-  name               = "udacity-lb-tf"
+  name               = "udacity-lb-alb-east-tf"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [var.ec2_sg]
@@ -30,6 +30,6 @@ resource "aws_lb_listener" "udacity" {
 
   default_action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.udacity.arn
+    target_group_arn = aws_lb_target_group.udacityTGeast.arn
   }
 }
