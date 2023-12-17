@@ -40,7 +40,7 @@ resource "aws_rds_cluster_instance" "udacity_instance-s" {
   count                = 1
   identifier           = "udacity-db-instance-${count.index}-s"
   cluster_identifier   = aws_rds_cluster.udacity_cluster-s.id
-  engine               = aws_rds_cluster.udacity_cluster.engine
+  engine               = aws_rds_cluster.default.engine
   instance_class       = "db.t2.small"
   db_subnet_group_name = aws_db_subnet_group.udacity_db_subnet_group.name
 }
