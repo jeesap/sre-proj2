@@ -27,15 +27,15 @@ _More detailed descriptions of each asset identified above._
 
 **EC2 instances :**
 
-EC2 instances are created in every availability zone in the region
+3 EC2 instances are created in every availability zone in the region
 
 **3 Bucket :**
 
-2 s3 buckets are created at 2 regions, to save terraform state.
+One s3 bucket named "udacity-tf-jees" is created at us-east-2 region ( Primary Zone) and another one named "udacity-tf-jees-west" created at us-west-1 (DR Zone) . S3 buckets are created for saving the terraform state.
 
 **Key pairs:**
 
-2 key pairs with name "udacity" and "udacity_west" are created at 2 regions, it's ssh key-pairs for connecting to ec2 instances of web servers.
+One key pair named "udacity" is created at us-east-2 region ( Primary Zone) and another named "udacity_west" is created at us-west-1 (DR Zone) . Purpose of these key-pairs are for connecting to ec2 instances of web servers.
 
 **VPC:**
 
