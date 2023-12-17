@@ -33,6 +33,9 @@ resource "aws_rds_cluster" "udacity_cluster-s" {
   engine_version           = "5.7.mysql_aurora.2.07.9" 
   skip_final_snapshot      = true
   storage_encrypted        = false
+  backup_retention_period  = 5
+  replication_source_identifier   = var.primary_db_cluster_arn
+  source_region            = "us-east-2"
   depends_on = [aws_rds_cluster_parameter_group.cluster_pg-s]
 }
 
