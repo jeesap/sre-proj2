@@ -35,7 +35,7 @@ One s3 bucket named "udacity-tf-jees" is created at us-east-2 region ( Primary Z
 
 **Key pairs:**
 
-One key pair named "udacity" is created at us-east-2 region ( Primary Zone) and another named "udacity_west" is created at us-west-1 (DR Zone) . Purpose of these key-pairs are for connecting to ec2 instances of web servers.
+One key pair named "udacity" is created at us-east-2 region ( Primary Zone) and another named "udacity_west" is created at us-west-1 (DR Zone) . These key-pairs are used for connecting to ec2 instances of web servers.
 
 **VPC:**
 
