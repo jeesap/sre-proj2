@@ -1,4 +1,5 @@
 variable primary_db_cluster_arn {}
+variable primary_db_instance_arn {}
 
 resource "aws_rds_cluster_parameter_group" "cluster_pg-s" {
   name   = "udacity-pg-s"
@@ -36,7 +37,8 @@ resource "aws_rds_cluster" "udacity_cluster-s" {
   backup_retention_period  = 5
   replication_source_identifier   = var.primary_db_cluster_arn
   source_region            = "us-east-2"
-  depends_on = [aws_rds_cluster_parameter_group.cluster_pg-s]
+# depends_on = [aws_rds_cluster_parameter_group.cluster_pg-s]
+  depends_on = [var.primary_db_instance_arn]
 }
 
 resource "aws_rds_cluster_instance" "udacity_instance-s" {
