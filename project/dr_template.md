@@ -39,7 +39,7 @@ One key pair named "udacity" is created at us-east-2 region ( Primary Zone) and 
 
 **VPC:**
 
-Virtual Private Cloud (Amazon VPC) is created to launch AWS resources into it, subnets public and private created in each availability zone of each region.
+Virtual Private Cloud (Amazon VPC) is created to launch AWS resources into it. There is one VPC for Primary zone and another zone in DR Zone.  
 
 **RDS cluster:**
 
@@ -47,7 +47,7 @@ Primary RDS cluster (which has one write instance and one read instance) is depl
 
 **Application Load Balancer :**
 
-Elastic Load Balancing automatically distributes incoming traffic across multiple EC2 instances more Availability Zones.
+Elastic Load Balancing automatically distributes incoming traffic across multiple EC2 instances .
 
 
 ## DR Plan
