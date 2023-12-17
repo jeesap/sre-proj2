@@ -43,7 +43,7 @@ Virtual Private Cloud (Amazon VPC) is created to launch AWS resources into it, s
 
 **RDS cluster:**
 
-we are deploying two RDS cluster. One RDS cluster as primary cluster is deployed in us-east-2 region. This RDS cluster has one write instance and one read instance. The another RDS cluster as secondary cluster is deployed in us-west-1 region with replication from the primary cluster in us-east.2. This secondary cluster has 2 read instances.
+Primary RDS cluster (which has one write instance and one read instance) is deployed in us-east-2 region. The secondary RDS cluster (which has 2 read instances) is deployed in us-west-1 region (DR Zone) with replication from the primary cluster . 
 
 **Application Load Balancer :**
 
