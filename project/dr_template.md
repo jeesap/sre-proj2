@@ -16,7 +16,7 @@ _Identify your zones here_
 | EC2 instances |  App Servers  |     t3.micro                       |     6                               |    3 instances deployed to DR zone exactly like Primary zone       |
 |Key Pair | SSH key for accessing EC2 instances |  | 2  | 1 each for Primary and DR Zone |
 |S3 Bucket|  To save Terraform state |   |  2 |      1 each in Primary and DR Zone |
-| EKS Cluster |  Kubernetes cluster |  | 2 | 1 EKS cluster each in Primary and DR Zone | 
+| EKS Cluster |  Kubernetes cluster |t3.medium  | 2 | 1 EKS cluster each in Primary and DR Zone | 
 | RDS Cluster | Database |  | 2 | Replicated from Primary zone to DR Zone    |
 | Application Load Balancer | For Traffic distribution |   | 2  | One in Primary and other in DR Zone |
 | VPC |  Virtual Network |   | 2  | One in Primary Zone and ther one in DR Zone|
